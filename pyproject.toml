@@ -1,0 +1,26 @@
+[project]
+name = "lunaria-api"
+version = "0.1.0"
+description = "An API to retrieve various infos about Space"
+authors = [
+    {name = "neuroliminalys"}
+]
+license = "GNU GPLv3"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi (>=0.141.1,<0.142.0)",
+    "uvicorn (>=0.52.0,<0.53.0)"
+]
+
+[tool.poetry]
+packages = [
+    { include = "lunaria", from = "src" }
+]
+
+[project.scripts]
+dev = "lunaria.cli.poetry_scripts:run_dev"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
